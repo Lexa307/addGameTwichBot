@@ -31,10 +31,11 @@ function onMessageHandler (target, context, msg, self) {
     let args = msg.split(' ');
     console.log(args);
     if(args[1]){
-        logger.write(args[1]+'\n');
-        client.say(target, `You added to gamelist ${args[1]}`);
+        args.shift();
+        logger.write(args.join(' ')+'\n');
+        client.say(target, `You added to gamelist ${args.join(' ')}`);
     }else{
-        client.say(target, `Write game correctly! use: !writegame [name Of game] ${args[1]}`);
+        client.say(target, `Write game correctly! use: !writegame [name Of game]`);
     }
     
     
